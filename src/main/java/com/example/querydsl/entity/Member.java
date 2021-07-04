@@ -6,8 +6,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-//@ToString(of = {"id", "username", "age"})
-@Getter @ToString
+@ToString(of = {"id", "username", "age"})
+@Getter
 @Entity
 public class Member {
 
@@ -15,7 +15,7 @@ public class Member {
     @GeneratedValue
     @Column(name = "member_id")
     private Long id;
-    private String username;
+    private String name;
     private int age;
     private int height;
 
@@ -27,13 +27,13 @@ public class Member {
     }
 
 
-    public Member(String username) {
-        this(username, 0);
+    public Member(String name) {
+        this(name, 0);
     }
 
 
     public Member(String username, int age, Team team) {
-        this.username = username;
+        this.name = username;
         this.age = age;
         if (team != null) {
             changeTeam(team);
@@ -42,7 +42,7 @@ public class Member {
 
     @Builder
     public Member(String username, int age) {
-        this.username = username;
+        this.name = username;
         this.age = age;
     }
 
@@ -60,12 +60,12 @@ public class Member {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {

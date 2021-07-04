@@ -1,4 +1,0 @@
-com/example/querydsl/entity/MemberTest.java
- com.example.querydsl.entity.MemberTest
-com/example/querydsl/QuerydslApplicationTests.java
- com.example.querydsl.QuerydslApplicationTests
