@@ -33,6 +33,8 @@ JPA에 대한 기본적인 설명이 필요하신 분들은 아래 글을 참조
 - member.name.contains("member%") &nbsp;&nbsp;&nbsp;&nbsp; ->  &nbsp;&nbsp; like '%member%'검색
 - member.name.contains("member%") &nbsp;&nbsp;&nbsp;&nbsp; ->  &nbsp;&nbsp; like 'member%'검색
 
+> [공식문서 참조](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
+
 <br><br/>
 
 ## 결과조회
@@ -45,7 +47,7 @@ JPA에 대한 기본적인 설명이 필요하신 분들은 아래 글을 참조
 - fetchResults : 페이징 정보 포함, total count 쿼리 추가 실행
 
 **FetchResult가 복잡해지면 content를 가져오는 쿼리와 totalcount를 가지고 오는 쿼리가 다를 때가 있다. 이때는 fetchResult를 사용하면 안되고 쿼리를 두 번 따로 날려야 한다.
-<br><br/>
+
 <br><br/>
 ## Sort
 
@@ -68,7 +70,6 @@ JPA에 대한 기본적인 설명이 필요하신 분들은 아래 글을 참조
 #### 완벽하게 이해하지 못한 부분 -> 페이징
 <br><br/>
 ## GroupBy
-
 - groupBy , 그룹화된 결과를 제한하려면 having
 - groupBy(), having() 예시 
 >groupBy(item.price)
@@ -86,6 +87,26 @@ rightJoin() : rigth 외부 조인(rigth outer join)
 JPQL의 on 과 성능 최적화를 위한 fetch 조인 제공 다음 on 절에서 설명
 
 <br><br/>
-## 세타 조인
+## 세타 조인(Theta Join)
 
 연관관계가 없는 필드로 조인 from 절에 여러 엔티티를 선택해서 세타 조인 외부 조인 불가능 다음에 설명할 조인 on을 사용하면 외부 조인 가능
+<br><br/>
+
+
+
+
+
+## Projections
+- 프로젝션 : select절에 가져올 대상 지정
+ 
+```java
+
+```
+
+
+- 프로재ㅔㄱ션 대상이 둘 이상이면 튜플이나 DTO로 조회 
+
+
+### 튜플 조회
+- 프로젝션 대상이 둘 이상일 때 사용
+com.querydsl.core.Tuple
